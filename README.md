@@ -2,7 +2,6 @@
 
 A production-grade **digital wallet** platform built with **Spring Boot** and **Spring Cloud**, featuring **event-driven architecture** with **Apache Kafka**, **CQRS with Elasticsearch**, **Keycloak (OAuth2/OIDC + JWT)** security, **API Gateway**, **service discovery**, **observability (Prometheus/Grafana)**, **centralized logging (ELK)**, and **distributed tracing (Zipkin/Sleuth or Micrometer Tracing)**.
 
-> Goal: Learn + apply real-world microservices patterns while building a realistic wallet system (accounts, transfers, payments, transactions, notifications).
 
 ---
 
