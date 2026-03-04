@@ -48,22 +48,28 @@ A production-grade **digital wallet** platform built with **Spring Boot** and **
 5. `query-service` (or read-model projector) consumes events and updates **Elasticsearch**
 6. Monitoring & tracing via Prometheus/Grafana/Zipkin, logs via ELK
 
-**High-level diagram**
+
 ```text
-Client
-  |
-  v
-[API Gateway] -> (RateLimit + CircuitBreaker + Auth)
-  |
-  v
-[Eureka Discovery]
-  |
-  +--> account-service  ---> Postgres (account_db) ---> Kafka events
-  |
-  +--> wallet-service   ---> Postgres (wallet_db)  ---> Kafka events
-  |
-  +--> transfer-service ---> Postgres (transfer_db)-> Kafka events
-  |
-  +--> notification-service <--- Kafka events (email/sms/push)
-  |
-  +--> query-service <--- Kafka events ---> Elasticsearch (read model)
+                ┌───────────────┐
+                │   API Gateway │
+                │ Spring Cloud  │
+                └───────┬───────┘
+                        │
+        ┌───────────────┼────────────────┐
+        │               │                │
+        ▼               ▼                ▼
+ ┌────────────┐ ┌──────────────┐ ┌──────────────┐
+ │ Auth       │ │ Wallet       │ │ Transaction  │
+ │ Service    │ │ Service      │ │ Service      │
+ │ Keycloak   │ │ Postgres     │ │ Postgres     │
+ └─────┬──────┘ └──────┬───────┘ └──────┬───────┘
+       │                │                │
+       │                │                │
+       │           Kafka Events          │
+       │                │                │
+       ▼                ▼                ▼
+ ┌──────────────┐ ┌──────────────┐ ┌──────────────┐
+ │ Analytics    │ │ Notification │ │ Search       │
+ │ Service      │ │ Service      │ │ Service      │
+ │ Postgres     │ │ Kafka        │ │ Elasticsearch│
+ └──────────────┘ └──────────────┘ └──────────────┘
