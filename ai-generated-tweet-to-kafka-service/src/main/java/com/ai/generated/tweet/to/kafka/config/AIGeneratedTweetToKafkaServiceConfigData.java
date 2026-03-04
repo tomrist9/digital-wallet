@@ -6,9 +6,8 @@ import org.springframework.context.annotation.Configuration;
 
 import java.util.List;
 
-@Data
-@Configuration
+
 @ConfigurationProperties(prefix = "ai-generated-tweet-to-kafka-service")
-public class AIGeneratedTweetToKafkaServiceConfigData {
-    private List<String> streamingDataKeywords;
-}
+public record AIGeneratedTweetToKafkaServiceConfigData(
+        List<String> streamingDataKeywords
+) {}

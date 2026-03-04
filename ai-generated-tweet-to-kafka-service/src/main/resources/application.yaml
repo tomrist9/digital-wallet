@@ -5,3 +5,5 @@ ai-generated-tweet-to-kafka-service:
     - Spring
     - Kafka
     - Elasticsearch
+server:
+  port: 8089
