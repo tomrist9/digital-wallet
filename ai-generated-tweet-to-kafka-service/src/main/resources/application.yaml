@@ -5,5 +5,6 @@ ai-generated-tweet-to-kafka-service:
     - Spring
     - Kafka
     - Elasticsearch
+  scheduler-duration-sec: 30
 server:
   port: 8089
