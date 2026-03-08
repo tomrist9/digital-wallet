@@ -1,11 +1,12 @@
 package com.ai.generated.tweet.to.kafka.exception;
 
-public class AIGeneratedTweetToKafkaServiceException extends RuntimeException{
+public class AIGeneratedTweetToKafkaServiceException extends RuntimeException {
     public AIGeneratedTweetToKafkaServiceException() {
         super();
     }
 
     public AIGeneratedTweetToKafkaServiceException(String message) {
+
         super(message);
     }
 
