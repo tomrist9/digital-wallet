@@ -11,7 +11,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.scheduling.TaskScheduler;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
@@ -20,6 +22,8 @@ import java.time.temporal.ChronoUnit;
 @SpringBootApplication
 @ConfigurationPropertiesScan
 @RequiredArgsConstructor
+@EnableScheduling
+@ComponentScan(basePackages = "com.ai.generated.tweet.to.kafka")
 public class AIGeneratedTweetToKafkaServiceApplication implements CommandLineRunner {
     private final Logger LOG = LoggerFactory.getLogger(AIGeneratedTweetToKafkaServiceApplication.class);
 
