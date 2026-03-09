@@ -23,7 +23,6 @@ import java.time.temporal.ChronoUnit;
 @ConfigurationPropertiesScan
 @RequiredArgsConstructor
 @EnableScheduling
-@ComponentScan(basePackages = "com.ai.generated.tweet.to.kafka")
 public class AIGeneratedTweetToKafkaServiceApplication implements CommandLineRunner {
     private final Logger LOG = LoggerFactory.getLogger(AIGeneratedTweetToKafkaServiceApplication.class);
 
