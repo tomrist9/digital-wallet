@@ -1,13 +1,13 @@
 package com.ai.generated.tweet.to.kafka.service.openai.model;
 
 
-import com.ai.generated.tweet.to.kafka.config.AIGeneratedTweetToKafkaServiceConfigData;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
+
 
 @Data
 @Builder
