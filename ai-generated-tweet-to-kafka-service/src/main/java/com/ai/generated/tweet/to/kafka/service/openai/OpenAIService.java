@@ -3,15 +3,20 @@ package com.ai.generated.tweet.to.kafka.service.openai;
 import com.ai.generated.tweet.to.kafka.config.AIGeneratedTweetToKafkaServiceConfigData;
 import com.ai.generated.tweet.to.kafka.exception.AIGeneratedTweetToKafkaServiceException;
 import com.ai.generated.tweet.to.kafka.service.AIService;
+import com.ai.generated.tweet.to.kafka.service.openai.model.OpenAIRequest;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.apache.hc.client5.http.classic.methods.HttpPost;
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
 import org.apache.hc.client5.http.impl.classic.HttpClients;
+import org.apache.hc.core5.http.HttpHeaders;
 import org.apache.hc.core5.http.io.entity.EntityUtils;
+import org.apache.hc.core5.http.io.entity.StringEntity;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -30,5 +35,25 @@ public class OpenAIService implements AIService {
             throw new AIGeneratedTweetToKafkaServiceException("Failed to generate tweet from OpenAI", e);
         }
 
+    }
+
+    private HttpPost getRequest(String prompt) throws JsonProcessingException {
+        HttpPost request = new HttpPost((configData.openAI().getUrl()));
+        request.addHeader(HttpHeaders.CONTENT_TYPE, configData.openAI().getContentType());
+        request.addHeader(HttpHeaders.AUTHORIZATION, "Bearer" + configData.openAI().getApiKey());
+        OpenAIRequest openAIRequest = OpenAIRequest.builder()
+                .model(configData.openAI().getModel())
+                .max_completion_tokens(configData.openAI().getMaxCompletionTokens())
+                .temperature(configData.openAI().getTemperature())
+                .messages(configData.openAI().getMessages().stream().map(message ->
+                        OpenAIRequest.Message.builder()
+                                .role(message.getRole())
+                                        .content(List.of(OpenAIRequest.Content.builder()
+                                                .type(message.getContent().getFirst().getType())
+                                                .text(prompt)
+                                                .build()))
+                                .build()).toList()).build();
+               request.setEntity(new StringEntity(objectMapper.writeValueAsString(openAIRequest)));
+        return request;
     }
 }
