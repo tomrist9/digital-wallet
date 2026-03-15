@@ -6,7 +6,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import java.util.List;
 
 
-@ConfigurationProperties(prefix = "ai-generated-tweet-to-kafka-service")
+@ConfigurationProperties(prefix = "ai-tweet-generator")
 public record AIGeneratedTweetToKafkaServiceConfigData(
 
         List<String> streamingDataKeywords,

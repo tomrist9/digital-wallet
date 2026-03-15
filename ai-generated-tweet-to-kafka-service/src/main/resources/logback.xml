@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 
-    <property name="DEV_HOME" value="./ai-generated-tweet-to-kafka-service/logs"/>
-    <property name="APP_NAME" value="ai-generated-tweet-to-kafka-service"/>
+    <property name="DEV_HOME" value="./ai-tweet-generator/logs"/>
+    <property name="APP_NAME" value="ai-tweet-generator"/>
 
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
