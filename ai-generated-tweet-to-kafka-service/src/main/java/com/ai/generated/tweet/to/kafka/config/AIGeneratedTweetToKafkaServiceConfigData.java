@@ -49,5 +49,6 @@ public record AIGeneratedTweetToKafkaServiceConfigData(
         private Integer maxOutputTokens;
         private Float temperature;
         private Integer candidateCount;
+        private String apiKey;
     }
 }
