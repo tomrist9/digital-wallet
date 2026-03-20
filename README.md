@@ -5,7 +5,7 @@ A production-grade **digital wallet** platform built with **Spring Boot** and **
 
 ---
 
-## ✨ Key Features
+##  Key Features
 
 - **Microservices architecture** with Spring Boot
 - **Spring Cloud Stack**
