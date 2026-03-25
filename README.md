@@ -44,6 +44,8 @@ This is the first implemented microservice in the system.
 
 Scheduler → AI Service → Prompt Template → AI Provider → JSON Output
 
+![AI Tweet Generation Architecture](docs/architecture/AI Tweet Generation Flow.jpg)
+
 ##  Key Features
 
 > ⚠️ Note: Full architecture is planned and partially implemented.  
