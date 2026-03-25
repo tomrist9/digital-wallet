@@ -2,39 +2,52 @@
 
 A production-grade **digital wallet** platform built with **Spring Boot** and **Spring Cloud**, featuring **event-driven architecture** with **Apache Kafka**, **CQRS with Elasticsearch**, **Keycloak (OAuth2/OIDC + JWT)** security, **API Gateway**, **service discovery**, **observability (Prometheus/Grafana)**, **centralized logging (ELK)**, and **distributed tracing (Zipkin/Sleuth or Micrometer Tracing)**.
 
+##  Project Status
+
+This project is currently under active development as part of my microservices learning journey.
+
+ Implemented:
+- AI-powered tweet generation microservice
+- Multi-provider AI integration (OpenAI, Google Vertex AI, DeepSeek)
+- Template-based prompt generation
+- Structured JSON output using schema enforcement
+- Scheduled data generation
+
+ Planned:
+- Kafka integration (event streaming)
+- API Gateway (Spring Cloud Gateway)
+- Service discovery (Eureka)
+- Authentication & Authorization (Keycloak)
+- CQRS with Elasticsearch
+- Observability (Prometheus, Grafana)
+
+
+
 
 ---
 
+## 🤖 AI Tweet Generation Service
+
+This is the first implemented microservice in the system.
+
+### Features:
+- Supports multiple AI providers:
+  - OpenAI
+  - Google Vertex AI
+  - DeepSeek
+- Config-driven provider switching
+- Prompt template engine
+- JSON schema-based output
+- Scheduled generation (every 120 seconds)
+
+### Example Flow:
+
+Scheduler → AI Service → Prompt Template → AI Provider → JSON Output
+
 ##  Key Features
 
-- **Microservices architecture** with Spring Boot
-- **Spring Cloud Stack**
-  - Config Server (externalized configuration)
-  - Netflix Eureka (service discovery)
-  - Spring Cloud Gateway (API Gateway)
-  - Spring Cloud LoadBalancer (client-side load balancing)
-  - Resilience4j (circuit breaker, retries, timeouts)
-  - Rate limiting (Redis-backed)
-- **Event-driven microservices** with **Apache Kafka**
-  - producers/consumers, partitions, consumer groups
-  - optional: schema registry + Avro
-  - optional: Kafka Streams + state store
-- **CQRS with Kafka + Elasticsearch**
-  - Write model in PostgreSQL
-  - Read model in Elasticsearch (indexed + query APIs)
-- **Security**: Keycloak with OAuth 2.0 + OpenID Connect + JWT
-- **Observability**
-  - Spring Boot Actuator + Micrometer
-  - Prometheus + Grafana dashboards
-  - Distributed tracing via Zipkin (or newer Micrometer Tracing stack)
-- **Logging**
-  - MDC correlation (request-id)
-  - ELK stack: Elasticsearch + Logstash + Kibana
-- **API documentation**: OpenAPI v3 (Swagger)
-- **HATEOAS** (optional for resource navigation)
-- **Basic UI** (optional): Thymeleaf + Bootstrap
-- **Reactive** (optional): WebFlux/WebClient for async reads to Elasticsearch
-- **Database per service** pattern
+> ⚠️ Note: Full architecture is planned and partially implemented.  
+> Currently, the AI microservice is completed and other components are under development.
 
 ---
 
