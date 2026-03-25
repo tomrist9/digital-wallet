@@ -26,7 +26,7 @@ This project is currently under active development as part of my microservices l
 
 ---
 
-## 🤖 AI Tweet Generation Service
+##  AI Tweet Generation Service
 
 This is the first implemented microservice in the system.
 
