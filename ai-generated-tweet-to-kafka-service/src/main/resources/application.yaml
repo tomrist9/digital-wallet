@@ -5,9 +5,17 @@ ai-tweet-generator:
     - Spring
     - Kafka
     - Elasticsearch
-  ai-service: OpenAI-JavaClient
-  scheduler-duration-sec: 30
-  prompt: "Generate a json with 4 elements called createdAt, id, text and user. The user element has also a nested json element called id. For createdAt use a date in format 'EEE MMM dd HH:mm:ss zzz yyyy', example date would be 'Fri March 13 06 14:32:25 UTC 2026', for id use a java long value, for text use a string including one or more of the keywords: {keywords}. For id field of the user field use a java long value. Do not write anything on the response other than the json text. That means omit ```json part in the response and any other explanation. Do not use new lines in the response. Do not include the L letter at the end of the long values. Only give 1 result in the response."
+  ai-service: SpringAI-OpenAI
+  scheduler-duration-sec: 120
+  prompt: "Write a COMPLETE Twitter post about Java microservices using Spring and Kafka.
+
+Rules:
+- Must be exactly 2 sentences
+- Each sentence must be complete
+- Total 20–30 words
+- Include at least 1 emoji
+- End with a strong statement
+- Do NOT stop early"
   keywords-placeholder: '{keywords}'
   open-ai:
       url: "https://api.openai.com/v1/chat/completions"
@@ -21,5 +29,24 @@ ai-tweet-generator:
           content:
             -
               type: "text"
+  google-gen-ai:
+    apiKey: ${GOOGLE_API_KEY}
+    modelName: "gemini-3-flash-preview"
+#    max-output-tokens: 150
+#    temperature: 1
+#    candidate-count: 1
+spring:
+  ai:
+    openai:
+      #      api-key: ${OPENAI_API_KEY}
+      api-key: ${DEEPSEEK_API_KEY}
+      #      base-url: "https://api.openai.com"
+      base-url: "https://api.deepseek.com"
+      chat:
+        options:
+          #          model: "gpt-4o-mini"
+          model: deepseek-chat
+          temperature: 1
+          maxTokens: 150
 server:
   port: 8089
