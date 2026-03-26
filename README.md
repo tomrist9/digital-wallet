@@ -36,7 +36,7 @@ This is the first implemented microservice in the system.
 - Config-driven provider switching
 - Prompt template engine
 - JSON schema-based output
-- Scheduled generation (every 120 seconds)
+- Scheduled generation 
 
 ### Example Flow:
 
