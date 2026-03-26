@@ -22,8 +22,6 @@ This project is currently under active development as part of my microservices l
 - Observability (Prometheus, Grafana)
 
 
-
-
 ---
 
 ##  AI Tweet Generation Service
