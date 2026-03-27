@@ -40,7 +40,7 @@ This is the first implemented microservice in the system.
 
 ### Example Flow:
 
-Scheduler → AI Service → Prompt Template → AI Provider → JSON Output
+Scheduler → AI Service →   AI Provider → Prompt Templat →e-> JSON Output
 
 ![AI Tweet Generation Architecture](docs/architecture/ai-tweet-generation-flow.jpg)
 
