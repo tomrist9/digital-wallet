@@ -22,8 +22,6 @@ This project is currently under active development as part of my microservices l
 - Observability (Prometheus, Grafana)
 
 
-
-
 ---
 
 ##  AI Tweet Generation Service
@@ -38,13 +36,13 @@ This is the first implemented microservice in the system.
 - Config-driven provider switching
 - Prompt template engine
 - JSON schema-based output
-- Scheduled generation (every 120 seconds)
+- Scheduled generation 
 
 ### Example Flow:
 
-Scheduler → AI Service → Prompt Template → AI Provider → JSON Output
+Scheduler → AI Service →   AI Provider → Prompt Templat →e-> JSON Output
 
-![AI Tweet Generation Architecture](docs/architecture/AI Tweet Generation Flow.jpg)
+![AI Tweet Generation Architecture](docs/architecture/ai-tweet-generation-flow.jpg)
 
 ##  Key Features
 
