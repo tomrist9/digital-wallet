@@ -51,7 +51,7 @@ Scheduler → AI Service →   AI Provider → Prompt Templat →e-> JSON Output
 
 ---
 
-## 🧱 Architecture Overview
+##  Architecture Overview
 
 **Flow**
 1. Client calls `api-gateway`
