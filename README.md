@@ -13,7 +13,7 @@ This project is currently under active development as part of my microservices l
 - Structured JSON output using schema enforcement
 - Scheduled data generation
 
- Planned:
+ In progress:
 - Kafka integration (event streaming)
 - API Gateway (Spring Cloud Gateway)
 - Service discovery (Eureka)
@@ -51,7 +51,7 @@ Scheduler → AI Service →   AI Provider → Prompt Templat →e-> JSON Output
 
 ---
 
-## 🧱 Architecture Overview
+##  Architecture Overview
 
 **Flow**
 1. Client calls `api-gateway`
