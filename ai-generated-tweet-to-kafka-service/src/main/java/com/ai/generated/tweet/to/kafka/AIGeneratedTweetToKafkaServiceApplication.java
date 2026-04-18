@@ -31,7 +31,6 @@ public class AIGeneratedTweetToKafkaServiceApplication implements CommandLineRun
     private final AIStreamRunner streamRunner;
     private final TaskScheduler taskScheduler;
 
-
     public static void main(String[] args) {
         SpringApplication.run(AIGeneratedTweetToKafkaServiceApplication.class, args);
     }
