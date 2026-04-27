@@ -32,6 +32,11 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
+                <groupId>com.digital-wallet.demo</groupId>
+                <artifactId>app-config-data</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
