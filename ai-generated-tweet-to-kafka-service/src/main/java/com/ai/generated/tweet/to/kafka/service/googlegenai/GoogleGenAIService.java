@@ -11,6 +11,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
+
 
 @Service
 @Slf4j
@@ -30,7 +32,7 @@ public class GoogleGenAIService implements AIService {
     }
 
     @PreDestroy
-    public void close() {
+    public void close() throws IOException {
         if (this.googleGenAIClient != null) {
             this.googleGenAIClient.close();
         }

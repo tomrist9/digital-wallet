@@ -22,6 +22,10 @@ import java.time.temporal.ChronoUnit;
 @SpringBootApplication
 @ConfigurationPropertiesScan
 @RequiredArgsConstructor
+@ComponentScan(basePackages = {
+        "com.digitalwallet.demo.config",
+        "com.ai.generated.tweet.to.kafka"
+})
 @EnableScheduling
 public class AIGeneratedTweetToKafkaServiceApplication implements CommandLineRunner {
     private final Logger LOG = LoggerFactory.getLogger(AIGeneratedTweetToKafkaServiceApplication.class);
