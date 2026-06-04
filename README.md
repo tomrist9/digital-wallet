@@ -4,7 +4,7 @@ A production-grade **digital wallet** platform built with **Spring Boot** and **
 
 ##  Project Status
 
-This project is currently under active development as part of my microservices learning journey.
+This project is currently under active development.
 
  Implemented:
 - AI-powered tweet generation microservice
