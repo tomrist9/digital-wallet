@@ -59,7 +59,7 @@ Scheduler → AI Service →   AI Provider → Prompt Templat →e-> JSON Output
 3. Services persist to **PostgreSQL** (write model)
 4. Services publish domain events to **Kafka**
 5. `query-service` (or read-model projector) consumes events and updates **Elasticsearch**
-6. Monitoring & tracing via Prometheus/Grafana/Zipkin, logs via ELK
+6. Monitoring & tracing via Prometheus/Grafana/Zipkin, logs via Elasticsearch
 
 
 ```text
